@@ -10,4 +10,5 @@ six.py
 template.yaml
 *.pth
 .application.json
+docs/node_modules/
 !docs/
