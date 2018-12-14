@@ -10,3 +10,4 @@ six.py
 template.yaml
 *.pth
 .application.json
+!docs/
