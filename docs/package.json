@@ -1,0 +1,19 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "Pull-Ko web page",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-pug": "pug --hierarchy -o ./ ./src/pug/",
+    "build-sass": "node-sass ./src/style --output ./style --output-style compressed",
+    "build": "npm run build-sass & npm run build-pug"
+  },
+  "author": "daikikojima",
+  "license": "MIT",
+  "dependencies": {
+    "node-sass": "^4.11.0",
+    "pug": "^2.0.3",
+    "pug-cli": "^1.0.0-alpha6"
+  }
+}
