@@ -5,9 +5,9 @@ import requests
 import json
 import jwt
 from dotenv import load_dotenv
+from Crypto.PublicKey import RSA
 
 class JwtManager():
-    # Initialize env file
     def __init__(self):
         dotenv_path = join(dirname(__file__), '.env')
         load_dotenv(dotenv_path)
@@ -30,7 +30,9 @@ class JwtManager():
             "iss": self.get_app_id()
         }
         pem = self.get_private_pem()
-        encoded = jwt.encode(payload, pem, "RS256")
+        rsa_key = RSA.importKey(pem)
+        key = rsa_key.exportKey()
+        encoded = jwt.encode(payload, key, "RS256")
         headers = {
             "Authorization": "Bearer " + encoded.decode("utf-8"),
             "Accept": "application/vnd.github.machine-man-preview+json"
@@ -45,3 +47,6 @@ class JwtManager():
         return {
             "Authorization": "token {}".format(token)
         }
+
+if __name__ == "__main__":
+    manager = JwtManager()
