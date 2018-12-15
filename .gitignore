@@ -3,7 +3,6 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*/
 *.so
 easy_install.py
 six.py
