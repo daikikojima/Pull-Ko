@@ -7,6 +7,7 @@ import jwt
 from dotenv import load_dotenv
 from Crypto.PublicKey import RSA
 
+# Refered: https://github.com/chakki-works/typot/blob/master/typot/env.py
 class JwtManager():
     def __init__(self):
         dotenv_path = join(dirname(__file__), '.env')
