@@ -3,22 +3,47 @@ html(lang="jp")
     head
         title Pull-Ko
         meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css', integrity='sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B', crossorigin='anonymous')
-        script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
-        script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js', integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49', crossorigin='anonymous')
-        script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js', integrity='sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em', crossorigin='anonymous')
+        link(rel='stylesheet', href='./dist/css/main.css')
     body
-       nav.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top
-            a.navbar-brand(href="#") Pull-Ko
-            button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation")
-                span.navbar-toggler-icon
-            #navbarNav.collapse.navbar-collapse
-                ul.navbar-nav
-                    li.nav-item.active
-                        a.nav-link(href="#")
-                            | Pull-Koとは
-                            span.sr-only (current)
-                    li.nav-item
-                        a.nav-link(href="#") 特徴
-                    li.nav-item
-                        a.nav-link(href="#") How to Install
+        header
+            include section/_header.pug
+        main(role="main")
+            #myCarousel.carousel.slide(data-ride="carousel")
+                ol.carousel-indicators
+                    li.active(data-target="#myCarousel" data-slide-to="0")
+                    li(data-target="#myCarousel" data-slide-to="1")
+                    li(data-target="#myCarousel" data-slide-to="2")
+                .carousel-inner
+                    include section/carousel/carousel-1st.pug
+                    include section/carousel/carousel-2nd.pug
+                    include section/carousel/carousel-3rd.pug
+                a.carousel-control-prev(href="#myCarousel" role="button" data-slide="prev")
+                    span.carousel-control-prev-icon(aria-hidden="true")
+                    span.sr-only Previous
+                a.carousel-control-next(href="#myCarousel" role="button" data-slide="next")
+                    span.carousel-control-next-icon(aria-hidden="true")
+                    span.sr-only Next
+            //
+                Marketing messaging and featurettes
+                ==================================================
+            // Wrap the rest of the page in another container to center all the content.
+            .container.marketing
+                // Three columns of text below the carousel
+                .row
+                    include section/row/row-1st.pug
+                    include section/row/row-2nd.pug
+                    include section/row/row-3rd.pug
+                // /.row
+                // START THE FEATURETTES
+                include section/feature/feature-1st.pug
+                include section/feature/feature-2nd.pug
+                include section/feature/feature-3rd.pug
+                hr.featurette-divider
+                // /END THE FEATURETTES
+            // /.container
+            // FOOTER
+            include section/_footer.pug
+        //
+            Bootstrap core JavaScript
+            ==================================================
+        script(src="./dist/js/main.js")
