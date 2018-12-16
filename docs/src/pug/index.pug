@@ -1,0 +1,43 @@
+doctype html
+html(lang="jp")
+    head
+        title Pull-Ko
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        link(rel='stylesheet', href='./dist/css/main.css')
+    body
+        header
+            include section/_header.pug
+        main(role="main")
+            #myCarousel.carousel.slide(data-ride="carousel")
+                ol.carousel-indicators
+                    li.active(data-target="#myCarousel" data-slide-to="0")
+                    li(data-target="#myCarousel" data-slide-to="1")
+                    li(data-target="#myCarousel" data-slide-to="2")
+                .carousel-inner
+                    include section/carousel/carousel-1st.pug
+                    include section/carousel/carousel-2nd.pug
+                    include section/carousel/carousel-3rd.pug
+                a.carousel-control-prev(href="#myCarousel" role="button" data-slide="prev")
+                    span.carousel-control-prev-icon(aria-hidden="true")
+                    span.sr-only Previous
+                a.carousel-control-next(href="#myCarousel" role="button" data-slide="next")
+                    span.carousel-control-next-icon(aria-hidden="true")
+                    span.sr-only Next
+            //
+                Marketing messaging and featurettes
+                ==================================================
+            // Wrap the rest of the page in another container to center all the content.
+            .container.marketing
+                // START THE FEATURETTES
+                include section/feature/feature-1st.pug
+                include section/feature/feature-2nd.pug
+                include section/feature/feature-3rd.pug
+                hr.featurette-divider
+                // /END THE FEATURETTES
+            // /.container
+            // FOOTER
+            include section/_footer.pug
+        //
+            Bootstrap core JavaScript
+            ==================================================
+        script(src="./dist/js/main.js")

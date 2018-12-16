@@ -3,10 +3,10 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*/
 *.so
 easy_install.py
 six.py
 template.yaml
 *.pth
 .application.json
+docs/node_modules/

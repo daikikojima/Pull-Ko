@@ -1,0 +1,67 @@
+@import "node_modules/bootstrap/scss/bootstrap";
+
+//colors
+$color_chicago_approx: #5a5a5a;
+$color_tapa_approx: rgba(0,0,0,0.5);
+
+body {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	color: $color_chicago_approx;
+}
+.carousel {
+	margin-bottom: 4rem;
+}
+.carousel-caption {
+	bottom: 3rem;
+	z-index: 10;
+}
+.carousel-item {
+	height: 32rem;
+	background-color: $color_tapa_approx;
+	> img {
+		opacity: 0.6;
+		position: absolute;
+		top: 0;
+		left: 0;
+		min-width: 100%;
+		height: 32rem;
+		object-fit: cover;
+	}
+}
+.marketing {
+	.col-lg-4 {
+		margin-bottom: 1.5rem;
+		text-align: center;
+		p {
+			margin-right: .75rem;
+			margin-left: .75rem;
+		}
+	}
+	h2 {
+		font-weight: 400;
+	}
+}
+.featurette-divider {
+	margin: 5rem 0;
+}
+.featurette-heading {
+	font-weight: 300;
+	line-height: 1;
+	letter-spacing: -.05rem;
+}
+@media(min-width: 40em) {
+	.featurette-heading {
+		font-size: 50px;
+	}
+	.carousel-caption p {
+		margin-bottom: 1.25rem;
+		font-size: 1.25rem;
+		line-height: 1.4;
+	}
+}
+@media(min-width: 62em) {
+	.featurette-heading {
+		margin-top: 7rem;
+	}
+}
