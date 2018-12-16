@@ -2,7 +2,7 @@
 
 //colors
 $color_chicago_approx: #5a5a5a;
-$color_tapa_approx: #777;
+$color_tapa_approx: rgba(0,0,0,0.5);
 
 body {
 	padding-top: 3rem;
@@ -20,11 +20,13 @@ body {
 	height: 32rem;
 	background-color: $color_tapa_approx;
 	> img {
+		opacity: 0.6;
 		position: absolute;
 		top: 0;
 		left: 0;
 		min-width: 100%;
 		height: 32rem;
+		object-fit: cover;
 	}
 }
 .marketing {
