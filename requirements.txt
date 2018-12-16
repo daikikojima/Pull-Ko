@@ -19,6 +19,9 @@ idna == 2.6
 
 # GenJWT.py: 7
 python_dotenv == 0.10.0
+PyJWT == 1.7.1
+pycrypto == 2.6.1
+cryptography ==2.4.2
 
 # GenJWT.py: 4
 # Naked/toolshed/network.py: 5
